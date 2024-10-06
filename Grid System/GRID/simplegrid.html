@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .container{
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr ;
+            grid-template-areas: 
+                "header header header"
+                "left center right"
+                "left center right"
+                "fote fote fote";
+        }
+        .header{
+            background-color: antiquewhite;
+            grid-area: header;
+        }
+        .left{
+            background-color: aquamarine;
+            grid-area: left;
+        }
+        .center{
+            background-color: blueviolet;
+            grid-area: center;
+        }
+        .right{
+            background-color: yellowgreen;
+            grid-area: right;
+        }
+        .fote{
+            background-color: violet;
+            grid-area: fote;
+        }
+        @media only screen and (max-width: 550px) {
+            .container{
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 2.2fr 2.2fr 2.2fr 1fr;
+                grid-template-areas: 
+                    "header"
+                    "left"
+                    "center"
+                    "right"
+                    "fote";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="left">Left</div>
+        <div class="center">Center</div>
+        <div class="right">Right</div>
+        <div class="fote">Footer</div>
+    </div>
+</body>
+</html>
